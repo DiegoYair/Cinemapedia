@@ -8,6 +8,12 @@ import 'package:cinemapedia/infrastructure/models/moviedb/movie_details.dart';
 import 'package:cinemapedia/infrastructure/models/moviedb/moviedb_response.dart';
 import 'package:dio/dio.dart';
 
+/*
+  Esta clase esta especializada para tener interaccion con MovieDB
+  dio.- gestor de peticiones HTTP
+*/
+
+/*--INICIO---Cliente de Peticiones HTTP---- */
 class MoviedbDatasource extends MoviesDatasource {
   final dio = Dio(BaseOptions(
       baseUrl: 'https://api.themoviedb.org/3',
@@ -15,6 +21,8 @@ class MoviedbDatasource extends MoviesDatasource {
         'api_key': Environment.theMovieDbKey,
         'lenguage': 'es-MX'
       }));
+
+  /*--FIN---Cliente de Peticiones HTTP---- */
 
   List<Movie> _jsonToMovies(Map<String, dynamic> json) {
     final movieDBResponse = MovieDbResponse.fromJson(json);
@@ -27,13 +35,20 @@ class MoviedbDatasource extends MoviesDatasource {
     return movies;
   }
 
+  /*--INICIO---Implementacion Cliente de Peticiones HTTP---- */
+
   @override
   Future<List<Movie>> getNowPlaying({int page = 1}) async {
     final response =
         await dio.get('/movie/now_playing', queryParameters: {'page': page});
+    /*'/movie/now_playing'
+         * Obtenga una lista de películas que se encuentran actualmente en los cines.
+         */
 
     return _jsonToMovies(response.data);
   }
+
+  /*--FIN---Implementacion Cliente de Peticiones HTTP---- */
 
   @override
   Future<List<Movie>> getPopular({int page = 1}) async {

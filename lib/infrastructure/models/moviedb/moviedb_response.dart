@@ -1,5 +1,8 @@
 import 'package:cinemapedia/infrastructure/models/moviedb/movie_moviedb.dart';
 
+/// Resultado Obtenido del Mapeo del archivo JSON de POSTMAN a la aplicacion quicktype
+//Esto nos permite personalizar la respuesta que obtendremos de la peticion al servidor.
+//Primera Parte
 class MovieDbResponse {
   final Dates? dates;
   final int page;
