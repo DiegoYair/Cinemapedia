@@ -1,4 +1,5 @@
 import 'package:cinemapedia/domain/entities/movie.dart';
+//Abstracta por que no queremos instanciar esta clase
 
 abstract class MoviesDatasource {
   Future<List<Movie>> getNowPlaying({int page = 1});

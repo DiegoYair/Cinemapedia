@@ -1,3 +1,8 @@
+/// Resultado Obtenido del Mapeo del archivo JSON de POSTMAN a la aplicacion quicktype
+//Esto nos permite personalizar la respuesta que obtendremos de la peticion al servidor.
+
+//Segunda Parte
+
 class MovieMovieDB {
   final bool adult;
   final String backdropPath;
