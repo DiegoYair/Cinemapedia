@@ -10,7 +10,7 @@ import 'package:cinemapedia/infrastructure/models/moviedb/movie_moviedb.dart';
  */
 
 class MovieMapper {
-  //Static Movie.- se importa de la entidad entities>movie.dart que es donde tenemos nuestro modelo de datos
+  //StaticMovie.- se importa de la entidad entities>movie.dart que es donde tenemos nuestro modelo de datos
   //MovieMovieDB.- Resultado obtenido del Mappeo del archivo JSON
   static Movie movieDBToEntity(MovieMovieDB moviedb) => Movie(
       adult: moviedb.adult,

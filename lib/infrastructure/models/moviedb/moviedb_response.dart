@@ -58,3 +58,7 @@ class Dates {
             "${minimum.year.toString().padLeft(4, '0')}-${minimum.month.toString().padLeft(2, '0')}-${minimum.day.toString().padLeft(2, '0')}",
       };
 }
+
+
+//Segunda Parte se encuentra movie_moviedb
+//Asi que el resultado se codifico en la clase Infrastrucure> models> moviedb> movie_moviedb

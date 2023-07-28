@@ -1,3 +1,4 @@
+//Esta es la entidad que define la aplicacion.
 class Movie {
   final bool adult;
   final String backdropPath;
