@@ -4,7 +4,7 @@ import 'package:cinemapedia/infrastructure/datasources/moviedb_datasource.dart';
 import 'package:cinemapedia/infrastructure/repositories/movie_repository_impl.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-/* Este archivo crea la instancia del movie repository implementation
+/* Este archivo crea la instancia del movie repository implementation,
  Riverpod es el gestor de estado.
  Esta clase nunca va a cambia la Data
  */
