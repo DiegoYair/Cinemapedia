@@ -4,6 +4,12 @@ A new Flutter project.
 
 #dev
 1.Copiar el .env.template y renombrarlo a .env
+2.-En el repositorio no se encuentra el archivo .env
+asi que puedes copiarlo y colocar lo siguiente
+
+THE_MOVIEDB_KEY=7ad12f27a3f5a95a0f9121003963e343
+
+para que asi quede la estructura correctamente
 
 ## Getting Started
 
