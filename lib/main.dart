@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+/*INICIO*/
+
 Future<void> main() async {
   /*
     Un Future representa principalmente el resultado de
@@ -33,6 +35,3 @@ class MainApp extends StatelessWidget {
     );
   }
 }
-/**
- * Hola se hizo el commit
- */
