@@ -17,9 +17,6 @@ StateNotifierProvider es un provider que se usa para escuchar y exponer un State
       (del paquete state_notifier, que Riverpod reexporta).
 StateNotifierProvider junto con StateNotifier es la solución recomendada por Riverpod para 
       administrar el estado que puede cambiar en reacción a una interacción del usuario.
-
-
-
       */
   final fetchMoreMovies = ref.watch(movieRepositoryProvider).getNowPlaying;
   return MoviesNotifier(fetchMoreMovies: fetchMoreMovies);
