@@ -11,6 +11,9 @@ import 'package:dio/dio.dart';
 /*
   Esta clase esta especializada para tener interaccion con MovieDB
   dio.- gestor de peticiones HTTP
+  ********************************************
+  Con Quicktype se convierte una peticion Json a Dart para realizar el mapeo de los datos.
+  Asi que el resultado se codifico en la clase Infrastrucure> models> moviedb> moviedb_response
 */
 
 /*--INICIO---Cliente de Peticiones HTTP---- */
@@ -26,11 +29,13 @@ class MoviedbDatasource extends MoviesDatasource {
 
   List<Movie> _jsonToMovies(Map<String, dynamic> json) {
     final movieDBResponse = MovieDbResponse.fromJson(json);
+    //MovieDbResponse.-Resultado Obtenido del Mapeo del archivo JSON de POSTMAN a la aplicacion quicktype
 
     final List<Movie> movies = movieDBResponse.results
         .where((moviedb) => moviedb.posterPath != 'no-poster')
         .map((moviedb) => MovieMapper.movieDBToEntity(moviedb))
         .toList();
+    //EL objetivo de map es crear la instancia de un movie
 
     return movies;
   }
@@ -77,8 +82,9 @@ class MoviedbDatasource extends MoviesDatasource {
   @override
   Future<Movie> getMovieById(String id) async {
     final response = await dio.get('/movie/$id');
-    if (response.statusCode != 200)
+    if (response.statusCode != 200) {
       throw Exception('Movie with id: $id not found');
+    }
     final movieDetails = MovieDetails.fromJson(response.data);
     final Movie movie = MovieMapper.movieDetailsToEntity(movieDetails);
     return movie;

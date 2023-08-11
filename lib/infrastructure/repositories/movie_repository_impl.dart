@@ -2,10 +2,17 @@ import 'package:cinemapedia/domain/datasource/movies_datasource.dart';
 import 'package:cinemapedia/domain/entities/movie.dart';
 import 'package:cinemapedia/domain/repositories/movies_repository.dart';
 
+/* Esta implementacion permite llamar el datasource (domain > repositories > movies_repository) 
+    y el datasource llamara los metodos.
+ */
+
 class MovieRepositoryImp extends MoviesRepository {
   final MoviesDatasource datasource;
   MovieRepositoryImp(this.datasource);
 
+/*Objetivo de la clase es que nos permita llamar el getNowPlaying basado en el datasource
+
+*/
   @override
   Future<List<Movie>> getNowPlaying({int page = 1}) {
     return datasource.getNowPlaying(page: page);
